@@ -366,16 +366,17 @@ form input[type="checkbox"] {
   align-items: center;
   gap: 90px;
   flex-wrap: wrap;
-  max-width: 820px;
+  max-width: 700px;
   margin: 56px auto 48px;
   padding: 0 24px;
+  margin-bottom: 16px
 }
 
 .gif-card {
   background-color: var(--cor-cartao);
-  border: 2px solid var(--cor-borda, #d8dcd2);
+  border: 6px solid var(--cor-principal);
   border-radius: var(--raio-borda);
-  padding: 14px;
+  padding: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
 }
 
