@@ -362,13 +362,13 @@ form input[type="checkbox"] {
 
 .gif-showcase {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: 80px;
   flex-wrap: wrap;
-  max-width: 920px;
-  margin: 16px auto 40px;
-  padding: 0 16px;
+  max-width: 780px;
+  margin: 64px auto 48px;
+  padding: 0 24px;
 }
 
 .gif-card {
