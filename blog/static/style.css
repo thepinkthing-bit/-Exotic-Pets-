@@ -211,6 +211,46 @@ input[type="submit"]:hover {
   max-width: 720px;
 }
 
+.form-section p,
+form p {
+  margin-bottom: 16px;
+}
+
+.form-section label,
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--cor-texto);
+}
+
+.form-section input[type="text"],
+.form-section input[type="url"],
+.form-section input[type="number"],
+.form-section input[type="file"],
+.form-section select,
+.form-section textarea,
+form input[type="text"],
+form input[type="url"],
+form input[type="number"],
+form input[type="file"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  background-color: var(--cor-cartao);
+  color: var(--cor-texto);
+  font-size: 0.95rem;
+}
+
+.form-section input[type="checkbox"],
+form input[type="checkbox"] {
+  width: auto;
+  margin-right: 6px;
+}
+
 .form-group {
   margin-bottom: 18px;
 }
