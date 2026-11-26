@@ -33,7 +33,7 @@ body {
   line-height: 1.6;
 
   background-color: var(--cor-fundo);
-  background-image: url("./fundo.jpg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./fundo.jpg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -44,7 +44,6 @@ body {
 header,
 nav,
 main,
-.container,
 .post-item,
 .form-section {
   background-color: var(--cor-cartao);
