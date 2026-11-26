@@ -40,6 +40,16 @@ body {
   background-repeat: no-repeat;
 }
 
+/* Áreas que ficam por cima sem mostrar a imagem de fundo */
+header,
+nav,
+main,
+.container,
+.post-item,
+.form-section {
+  background-color: var(--cor-cartao);
+}
+
 a {
   color: var(--cor-principal);
   text-decoration: none;
@@ -67,7 +77,9 @@ textarea,
 main,
 .container {
   max-width: 920px;
-  margin: 28px auto;
+  margin: 24px auto;
+  border-radius: var(--raio-borda);
+  padding: 24px;
   padding: 0 18px;
 }
 
@@ -321,4 +333,30 @@ form input[type="checkbox"] {
   color: var(--cor-erro);
   font-size: 0.88rem;
   margin-top: 5px;
+}
+
+.hero-card,
+.list-panel {
+  background-color: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: 24px 28px;
+}
+
+.hero-card {
+  max-width: 760px;
+  margin: 24px auto 40px;
+  text-align: center;
+}
+
+.hero-card footer {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--cor-borda);
+  color: var(--cor-texto-suave);
+}
+
+.list-panel {
+  max-width: 920px;
+  margin: 24px auto;
 }
