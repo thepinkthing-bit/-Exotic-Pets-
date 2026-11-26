@@ -359,3 +359,31 @@ form input[type="checkbox"] {
   max-width: 920px;
   margin: 24px auto;
 }
+
+.gif-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  max-width: 920px;
+  margin: 16px auto 40px;
+  padding: 0 16px;
+}
+
+.gif-card {
+  background-color: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.gif-img {
+  display: block;
+  max-width: 280px;
+  max-height: 190px;
+  width: auto;
+  height: auto;
+  border-radius: calc(var(--raio-borda) - 2px);
+}
