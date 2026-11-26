@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agrave+Pro&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Excluir Post | Exotics Pets Blog</title>
 </head>
 <body>
   <header>
-    <p><a href="{% url 'blog:post_detail' slug=post.slug %}">← Voltar ao artigo</a></p>
+    <p><a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn">← Voltar ao artigo</a></p>
     <h1>🗑️ Excluir Artigo 🦂</h1>
   </header>
 
@@ -16,8 +19,8 @@
 
     <form method="post">
       {% csrf_token %}
-      <button type="submit">Sim, excluir 🐞</button>
-      <a href="{% url 'blog:post_detail' slug=post.slug %}">Cancelar 🐌</a>
+      <button type="submit" class="btn">Sim, excluir 🐞</button>
+      <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn">Cancelar 🐌</a>
     </form>
   </main>
 </body>

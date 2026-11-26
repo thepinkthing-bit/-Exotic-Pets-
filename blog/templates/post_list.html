@@ -40,9 +40,9 @@
         {% endif %}
         {% if user.is_authenticated %}
          <div class="post-actions">
-           <a href="{% url 'blog:post_update' slug=post.slug %}">Editar 🐪</a>
+           <a href="{% url 'blog:post_update' slug=post.slug %}" class="btn">Editar 🐪</a>
            <span>|</span>
-           <a href="{% url 'blog:post_delete' slug=post.slug %}">Excluir 🐛</a>
+           <a href="{% url 'blog:post_delete' slug=post.slug %}" class="btn">Excluir 🐛</a>
          </div>
         {% endif %}
       </article>
