@@ -1,5 +1,53 @@
+/* =========================================
+   1. VARIÁVEIS DE COR E TEMA (EDITE AQUI)
+   ========================================= */
+:root {
+  --cor-fundo: #f4f7f4;          /* Fundo geral da página */
+  --cor-cartao: #ffffff;         /* Fundo dos cartões, inputs e formulários */
+  --cor-texto: #1f2933;          /* Cor principal dos textos e títulos */
+  --cor-texto-suave: #52606d;    /* Descrições, subtítulos e avisos */
+  --cor-borda: #dce5dc;          /* Bordas discretas */
+
+  --cor-principal: #15803d;      /* Cor principal (botões, links, destaques) */
+  --cor-principal-hover: #166534;/* Cor ao passar o mouse em botões/links */
+  --cor-borda-cartao: #15803d;   /* Faixa lateral dos cartões de artigo */
+
+  --cor-erro: #b91c1c;           /* Mensagens de erro */
+  --fonte-principal: "Agrave Pro", cursive;
+  --raio-borda: 8px;
+}
+
+/* =========================================
+   2. BASE E TIPOGRAFIA GLOBAL
+   ========================================= */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Agrave Pro", cursive;
+  margin: 0;
+  font-family: var(--fonte-principal);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+
+  background-color: var(--cor-fundo);
+  background-image: url("./fundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+a {
+  color: var(--cor-principal);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--cor-principal-hover);
+  text-decoration: underline;
 }
 
 button,
@@ -10,100 +58,11 @@ textarea,
 .btn-submit,
 .search-btn {
   font-family: inherit;
-
 }
 
-.post-cover {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.search-form {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.search-input {
-  flex: 1;
-  min-width: 220px;
-  padding: 9px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 5px;
-  font-size: 0.95rem;
-}
-
-.search-btn {
-  background-color: #15803d;
-  color: #ffffff;
-  border: none;
-  padding: 9px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.search-btn:hover {
-  background-color: #166534;
-}
-
-.clear-search {
-  color: #4b5563;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-
-.clear-search:hover {
-  text-decoration: underline;
-}
-
-/* === Base e Tipografia === */
-:root {
-  --bg-page: #f4f7f4;
-  --bg-card: #ffffff;
-  --text-main: #1f2933;
-  --text-muted: #52606d;
-  --primary: #15803d;
-  --primary-dark: #166534;
-  --primary-soft: #dcfce7;
-  --border-color: #dce5dc;
-  --danger: #b91c1c;
-  --shadow-sm: 0 2px 8px rgba(21, 128, 61, 0.06);
-  --shadow-md: 0 8px 20px rgba(31, 41, 51, 0.09);
-  --radius: 10px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  line-height: 1.6;
-}
-
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--primary-dark);
-  text-decoration: underline;
-}
-
-/* === Contentor Principal === */
+/* =========================================
+   3. ESTRUTURA E TÍTULOS
+   ========================================= */
 main,
 .container {
   max-width: 920px;
@@ -114,8 +73,7 @@ main,
 h1 {
   font-size: 2rem;
   margin: 0 0 20px;
-  color: var(--text-main);
-  letter-spacing: -0.02em;
+  color: var(--cor-texto);
 }
 
 h2 {
@@ -123,7 +81,44 @@ h2 {
   margin: 10px 0 4px;
 }
 
-/* === Barra de Pesquisa === */
+/* =========================================
+   4. BOTÕES (PADRÃO DO SITE)
+   ========================================= */
+.btn,
+.btn-submit,
+.search-btn,
+button[type="submit"],
+input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: var(--cor-principal);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--raio-borda);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover,
+.btn-submit:hover,
+.search-btn:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--cor-principal-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* =========================================
+   5. BUSCA
+   ========================================= */
 .search-form {
   display: flex;
   gap: 10px;
@@ -136,100 +131,83 @@ h2 {
   flex: 1;
   min-width: 220px;
   padding: 10px 14px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  background-color: var(--bg-card);
-  color: var(--text-main);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  background-color: var(--cor-cartao);
+  color: var(--cor-texto);
   font-size: 0.95rem;
-  box-shadow: var(--shadow-sm);
 }
 
 .search-input:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
-}
-
-.search-btn {
-  background-color: var(--primary);
-  color: #ffffff;
-  border: none;
-  padding: 10px 18px;
-  border-radius: var(--radius);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-.search-btn:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-1px);
+  border-color: var(--cor-principal);
 }
 
 .clear-search {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--cor-texto-suave);
 }
 
-/* === Cartões de Artigos === */
+/* =========================================
+   6. LISTAGEM E CARTÕES DE ARTIGOS
+   ========================================= */
 .post-item {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-left: 5px solid var(--primary);
-  border-radius: var(--radius);
+  background-color: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-left: 5px solid var(--cor-borda-cartao);
+  border-radius: var(--raio-borda);
   padding: 20px 22px;
   margin-bottom: 18px;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .post-item:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
 }
 
 .post-cover {
   width: 100%;
   max-width: 320px;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--raio-borda);
   margin-bottom: 12px;
   display: block;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
 }
 
 .scientific-name {
   margin: 0 0 10px;
-  color: var(--text-muted);
+  color: var(--cor-texto-suave);
   font-size: 0.95rem;
 }
 
 .post-summary {
   margin: 0 0 14px;
-  color: var(--text-main);
+  color: var(--cor-texto);
 }
 
 .post-actions {
   display: flex;
   gap: 8px;
   align-items: center;
-  padding-top: 10px;
-  border-top: 1px solid #eef2ef;
-  font-size: 0.9rem;
+  padding-top: 12px;
+  border-top: 1px solid var(--cor-borda);
+  flex-wrap: wrap;
 }
 
 .post-divider {
   display: none;
 }
 
-/* === Formulário de Novo / Editar Artigo === */
+/* =========================================
+   7. FORMULÁRIOS
+   ========================================= */
 .form-section {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  padding: 26px 28px;
+  background-color: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: 24px 28px;
   max-width: 720px;
-  box-shadow: var(--shadow-sm);
 }
 
 .form-group {
@@ -240,7 +218,7 @@ h2 {
   display: block;
   font-weight: 600;
   margin-bottom: 6px;
-  color: var(--text-main);
+  color: var(--cor-texto);
 }
 
 .form-group input[type="text"],
@@ -251,22 +229,18 @@ h2 {
 .form-group textarea {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 7px;
-  background-color: #fcfdfb;
-  color: var(--text-main);
-  font-family: inherit;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  background-color: var(--cor-cartao);
+  color: var(--cor-texto);
   font-size: 0.95rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary);
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.14);
+  border-color: var(--cor-principal);
 }
 
 .form-group textarea {
@@ -277,7 +251,7 @@ h2 {
 .form-help {
   display: block;
   margin-top: 5px;
-  color: var(--text-muted);
+  color: var(--cor-texto-suave);
   font-size: 0.85rem;
 }
 
@@ -287,84 +261,23 @@ h2 {
   align-items: center;
   margin-top: 22px;
   padding-top: 14px;
-  border-top: 1px solid #eef2ef;
-}
-
-.btn-submit {
-  background-color: var(--primary);
-  color: #ffffff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 50px;
-  font-weight: 30;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
-}
-
-.btn-submit:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
-  border: none;
+  border-top: 1px solid var(--cor-borda);
+  flex-wrap: wrap;
 }
 
 .btn-cancel {
-  color: var(--text-muted);
+  color: var(--cor-texto-suave);
   font-size: 0.95rem;
   padding: 8px 10px;
-  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
-  border: none;
 }
 
 .btn-cancel:hover {
-  color: var(--text-main);
-  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.15);
-  border: none;
+  color: var(--cor-texto);
 }
 
 .field-error,
 .form-errors {
-  color: var(--danger);
+  color: var(--cor-erro);
   font-size: 0.88rem;
   margin-top: 5px;
-}
-
-/* === Botões Padrão (estilo Buscar) === */
-.btn,
-.btn-submit,
-.search-btn {
-  display: inline-block;
-  background-color: #166534;
-  color: #ffffff;
-  border: none;
-  padding: 10px 10px;
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration:  #abf0c4;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-.btn:hover,
-.btn-submit:hover,
-.search-btn:hover {
-  background-color: #166534;
-  color: #ffffff;
-  transform: translateY(-1px);
-  text-decoration:  #abf0c4;
-}
-
-/* Variação discreta para ações secundárias/excluir, se quiser diferenciar */
-.btn-danger {
-  background-color: #b91c1c;
-  color: #ffffff;
-}
-
-.btn-danger:hover {
-  background-color: #991b1b;
-  color: #ffffff;
 }
