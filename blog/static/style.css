@@ -3,18 +3,19 @@
    ========================================= */
 :root {
   --cor-fundo: #f4f7f4;          /* Fundo geral da página */
-  --cor-cartao: #ffffff;         /* Fundo dos cartões, inputs e formulários */
-  --cor-texto: #1f2933;          /* Cor principal dos textos e títulos */
+  --cor-cartao: #eee0a3;         /* Fundo dos cartões, inputs e formulários */
+  --cor-texto: #5d8a7a;          /* Cor principal dos textos e títulos */
   --cor-texto-suave: #52606d;    /* Descrições, subtítulos e avisos */
   --cor-borda: #dce5dc;          /* Bordas discretas */
 
-  --cor-principal: #15803d;      /* Cor principal (botões, links, destaques) */
-  --cor-principal-hover: #166534;/* Cor ao passar o mouse em botões/links */
-  --cor-borda-cartao: #15803d;   /* Faixa lateral dos cartões de artigo */
+  --cor-principal: #6c7734;      /* Cor principal (botões, links, destaques) */
+  --cor-principal-hover: #5f692a;   /* Cor ao passar o mouse em botões/links */
+  --cor-borda-cartao: #9d3a16;   /* Faixa lateral dos cartões de artigo */
 
   --cor-erro: #b91c1c;           /* Mensagens de erro */
   --fonte-principal: "Agrave Pro", cursive;
   --raio-borda: 8px;
+  --cor-cartao: rgba(255, 255, 255, 0.897);
 }
 
 /* =========================================
