@@ -92,3 +92,28 @@ def post_delete(request, slug):
         return redirect("blog:index")
 
     return render(request, "post_confirm_delete.html", {"post": post})
+
+def post_list(request, slug=None):
+    categorias = Categoria.objects.all()
+    posts = Post.objects.filter(publicado=True).select_related("categoria")
+    categoria_ativa = None
+    query = request.GET.get("q", "").strip()
+
+    if slug:
+        categoria_ativa = get_object_or_404(Categoria, slug=slug)
+        posts = posts.filter(categoria=categoria_ativa)
+
+    if query:
+        posts = posts.filter(
+            Q(titulo__icontains=query)
+            | Q(nome_cientifico__icontains=query)
+            | Q(resumo__icontains=query)
+        )
+
+    contexto = {
+        "posts": posts,
+        "categorias": categorias,
+        "categoria_ativa": categoria_ativa,
+        "query": query,
+    }
+    return render(request, "post_list.html", contexto)

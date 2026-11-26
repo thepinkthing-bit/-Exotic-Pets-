@@ -1,0 +1,17 @@
+# Ambiente virtual e Python
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Base de dados local e ficheiros enviados pelos utilizadores
+db.sqlite3
+media/
+
+# Ficheiros estáticos recolhidos em produção (se usares collectstatic)
+staticfiles/
+
+# VS Code e sistema operativo
+.vscode/
+.DS_Store
+Thumbs.db

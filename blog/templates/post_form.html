@@ -7,12 +7,12 @@
 </head>
 <body>
   <header>
-    <p><a href="{% url 'blog:index' %}">← Voltar à página inicial</a></p>
+    <p><a href="{% url 'blog:index' %}">← Voltar à página inicial 🐻</a></p>
     <h1>
       {% if modo_edicao %}
-        ✏️ Exotics Pets — Editar Artigo
+         Exotics Pets — Editar Artigo 🦚
       {% else %}
-        🐍 Exotics Pets — Novo Artigo
+        Exotics Pets — Novo Artigo 🐣
       {% endif %}
     </h1>
   </header>
@@ -21,10 +21,10 @@
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
 
-      <h2>Dados do artigo</h2>
+      <h2>🐰 Dados do artigo 🐰</h2>
       {{ form.as_p }}
 
-      <h2>Fotos da galeria</h2>
+      <h2>🦋 Fotos da galeria 🦋</h2>
       {{ formset.management_form }}
       {% for subform in formset %}
         <fieldset>
@@ -34,7 +34,7 @@
       {% endfor %}
 
       <button type="submit">
-        {% if modo_edicao %}Salvar alterações{% else %}Salvar post{% endif %}
+        {% if modo_edicao %}Salvar alterações 🦊{% else %}Salvar post 🦝{% endif %}
       </button>
     </form>
   </main>
