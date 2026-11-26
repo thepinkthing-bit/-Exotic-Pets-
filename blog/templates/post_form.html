@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if modo_edicao %}Editar Post{% else %}Novo Post{% endif %} | Exotics Pets Blog</title>
+</head>
+<body>
+  <header>
+    <p><a href="{% url 'blog:index' %}">← Voltar à página inicial</a></p>
+    <h1>
+      {% if modo_edicao %}
+        ✏️ Exotics Pets — Editar Artigo
+      {% else %}
+        🐍 Exotics Pets — Novo Artigo
+      {% endif %}
+    </h1>
+  </header>
+
+  <main>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <h2>Dados do artigo</h2>
+      {{ form.as_p }}
+
+      <h2>Fotos da galeria</h2>
+      {{ formset.management_form }}
+      {% for subform in formset %}
+        <fieldset>
+          <legend>Foto {{ forloop.counter }}</legend>
+          {{ subform.as_p }}
+        </fieldset>
+      {% endfor %}
+
+      <button type="submit">
+        {% if modo_edicao %}Salvar alterações{% else %}Salvar post{% endif %}
+      </button>
+    </form>
+  </main>
+</body>
+</html>

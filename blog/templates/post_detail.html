@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ post.titulo }} | Exotics Pets Blog</title>
+</head>
+<body>
+  <header>
+    <p><a href="{% url 'blog:index' %}">← Voltar à página inicial</a></p>
+    <h1>🐍 Exotics Pets 🐍</h1>
+  </header>
+
+  <main>
+    <article>
+      {% if post.categoria %}
+        <span>{{ post.categoria.nome }}</span>
+      {% endif %}
+
+      <h2>{{ post.titulo }}</h2>
+
+      {% if post.nome_cientifico %}
+        <p><em>{{ post.nome_cientifico }}</em></p>
+      {% endif %}
+
+      <p><small>Publicado em {{ post.criado_em|date:"d/m/Y" }}</small></p>
+      <hr>
+
+      {% if post.imagem_detalhe %}
+        <img src="{{ post.imagem_detalhe.url }}" alt="{{ post.titulo }}" style="max-width: 500px; height: auto;">
+      {% elif post.imagem_capa %}
+        <img src="{{ post.imagem_capa.url }}" alt="{{ post.titulo }}" style="max-width: 500px; height: auto;">
+      {% endif %}
+
+      {% if user.is_authenticated %}
+      <div>
+        <a href="{% url 'blog:post_update' slug=post.slug %}">Editar post</a>
+        |
+        <a href="{% url 'blog:post_delete' slug=post.slug %}">Excluir post</a>
+        {{ post.conteudo|linebreaks }}
+      </div>
+      {% endif %}
+      {{ post.conteudo|linebreaks }}
+      
+      {% if post.imagens.all %}
+        <hr>
+        <h3>Mais fotos</h3>
+        {% for foto in post.imagens.all %}
+          <div>
+            <img src="{{ foto.imagem.url }}" alt="{{ foto.legenda|default:post.titulo }}" style="max-width: 300px; height: auto;">
+            {% if foto.legenda %}
+              <p>{{ foto.legenda }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </article>
+  </main>
+</body>
+</html>
