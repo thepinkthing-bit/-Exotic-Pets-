@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}🐲 Artigos | Exotics Pets 🐲{% endblock %}
+{% block title %}🐉 Artigos | Exotics Pets 🐉{% endblock %}
 
 {% block content %}
   <section class="posts-section">
@@ -16,7 +16,7 @@
       >
       <button type="submit" class="search-btn">Buscar 🦎</button>
       {% if request.GET.q or query %}
-        <a href="{% url 'blog:post_list' %}" class="clear-search">Limpar 🦇</a>
+        <a href="{% url 'blog:post_list' %}" class="clear-search">Limpar</a>
       {% endif %}
     </form>
 
@@ -38,7 +38,7 @@
 
         <div class="post-actions">
           <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn">Ler mais</a>
-          <a href="{% url 'blog:post_edit' slug=post.slug %}" class="btn">Editar 🐪</a>
+          <a href="{% url 'blog:post_update' slug=post.slug %}" class="btn">Editar 🐪</a>
           <a href="{% url 'blog:post_delete' slug=post.slug %}" class="btn">Excluir 🐛</a>
         </div>
       </article>
