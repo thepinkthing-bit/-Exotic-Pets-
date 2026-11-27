@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 class Categoria(models.Model):
@@ -12,6 +13,13 @@ class Categoria(models.Model):
 
 
 class Post(models.Model):
+    autor = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="posts",
+        null=True,
+        blank=True,
+    )
     categoria = models.ForeignKey(
         Categoria,
         on_delete=models.SET_NULL,

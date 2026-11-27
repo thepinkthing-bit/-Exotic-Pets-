@@ -3,6 +3,8 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from .forms import ImagemPostFormSet, PostForm
 from .models import Categoria, Post
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 
 def index(request, slug=None):
     categorias = Categoria.objects.all()
@@ -117,3 +119,14 @@ def post_list(request, slug=None):
         "query": query,
     }
     return render(request, "post_list.html", contexto)
+
+def signup(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("blog:index")
+    else:
+        form = UserCreationForm()
+    return render(request, "registration/signup.html", {"form": form})

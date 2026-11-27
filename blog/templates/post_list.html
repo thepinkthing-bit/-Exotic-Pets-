@@ -4,7 +4,7 @@
 
 {% block content %}
   <section class="posts-section">
-    <h1>Artigos</h1>
+    <h1>🦎 Artigos 🦎</h1>
 
     <form method="get" class="search-form">
       <input
@@ -16,7 +16,7 @@
       >
       <button type="submit" class="search-btn">Buscar 🦎</button>
       {% if request.GET.q or query %}
-        <a href="{% url 'blog:post_list' %}" class="clear-search">Limpar</a>
+        <a href="{% url 'blog:post_list' %}" class="clear-search">Limpar 🦥</a>
       {% endif %}
     </form>
 
@@ -37,13 +37,13 @@
         <p class="post-summary">{{ post.resumo }}</p>
 
         <div class="post-actions">
-          <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn">Ler mais</a>
+          <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn">Ler mais 🐧</a>
           <a href="{% url 'blog:post_update' slug=post.slug %}" class="btn">Editar 🐪</a>
           <a href="{% url 'blog:post_delete' slug=post.slug %}" class="btn">Excluir 🐛</a>
         </div>
       </article>
     {% empty %}
-      <p>Nenhum artigo encontrado.</p>
+      <p>🦩 Nenhum artigo encontrado.🦩</p>
     {% endfor %}
   </section>
 {% endblock %}

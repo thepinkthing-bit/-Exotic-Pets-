@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}🐙 Entrar | Exotics Pets 🐙{% endblock %}
+
+{% block content %}
+  <section class="auth-card">
+    <h1>Entrar 🦨</h1>
+    <p class="auth-subtitle">Acesse sua conta para criar e gerenciar seus artigos.</p>
+
+    <form method="post" class="auth-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+
+    <p class="auth-switch">
+      Ainda não tem conta? 🦑<a href="{% url 'blog:signup' %}">
+      |
+      Cadastrar 🦁</a>
+    </p>
+  </section>
+{% endblock %}

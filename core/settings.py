@@ -40,7 +40,7 @@ ALLOWED_HOSTS = [
 if not ALLOWED_HOSTS and DEBUG:
     ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
-LOGIN_URL = "/admin/login/"
+LOGIN_URL = "/conta/entrar/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 

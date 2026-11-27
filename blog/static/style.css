@@ -388,3 +388,44 @@ form input[type="checkbox"] {
   height: auto;
   border-radius: calc(var(--raio-borda) - 2px);
 }
+
+.auth-card {
+  max-width: 520px;
+  margin: 24px auto;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+}
+
+.auth-card h1 {
+  margin-top: 0;
+}
+
+.auth-subtitle {
+  margin-bottom: 20px;
+}
+
+.auth-form p {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.auth-form input,
+.auth-form select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.auth-form .helptext,
+.auth-form .errorlist {
+  font-size: 0.9rem;
+}
+
+.auth-switch {
+  margin-top: 20px;
+  margin-bottom: 0;
+}

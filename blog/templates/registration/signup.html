@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}🦒 Cadastrar | Exotics Pets 🦒{% endblock %}
+
+{% block content %}
+  <section class="auth-card">
+    <h1>🐉 Criar conta 🐉</h1>
+    <p class="auth-subtitle">Cadastre-se para publicar curiosidades e cuidados com pets exóticos.</p>
+
+    <form method="post" class="auth-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn">Cadastrar 🦁</button>
+    </form>
+
+    <p class="auth-switch">
+      Já tem conta? 🐳<a href="{% url 'blog:login' %}">
+      |
+      Entrar 🦨</a>
+    </p>
+  </section>
+{% endblock %}
