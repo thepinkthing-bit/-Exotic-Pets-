@@ -29,9 +29,9 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.environ.get("ALLOWED_HOSTS", "").split(",")
-    if host.strip()
+    'exotic-pets-t6ph.onrender.com',
+    'localhost',
+    '127.0.0.1',
 ]
 
 if not ALLOWED_HOSTS and DEBUG:
