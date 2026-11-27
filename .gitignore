@@ -4,6 +4,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .env
+dados.json
 
 # Base de dados local e ficheiros enviados pelos utilizadores
 db.sqlite3
