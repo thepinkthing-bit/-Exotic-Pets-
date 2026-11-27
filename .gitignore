@@ -6,7 +6,6 @@ __pycache__/
 
 # Base de dados local e ficheiros enviados pelos utilizadores
 db.sqlite3
-media/
 
 # Ficheiros estáticos recolhidos em produção (se usares collectstatic)
 staticfiles/
